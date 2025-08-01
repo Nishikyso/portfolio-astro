@@ -1,0 +1,41 @@
+---
+// src/components/Projects.astro
+import ProjectCard from './ProjectCard.astro';
+import BackgroundShapes from './BackgroundShapes.astro';
+
+const projects = [
+  {
+    title: "Landing Page para Artista",
+    description: "Una web minimalista y visual para un escultor, enfocada en la galería de obras y el contacto directo.",
+    tags: ["Astro", "Tailwind", "GSAP"],
+    link: "#"
+  },
+  {
+    title: "E-commerce para Tienda Local",
+    description: "Plataforma de venta online para una tienda de productos orgánicos, con carrito de compras integrado.",
+    tags: ["React", "TypeScript", "Stripe"],
+    link: "#"
+  },
+  {
+    title: "Portfolio para Fotógrafo",
+    description: "Un diseño elegante y responsivo que pone las imágenes en el centro de la experiencia.",
+    tags: ["Next.js", "Lenis", "Framer Motion"],
+    link: "#"
+  }
+]
+---
+<section id="projects" class="relative py-20 px-4">
+
+  <BackgroundShapes section="projects" />
+
+  <div class="relative container mx-auto max-w-7xl py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-text mb-12">
+      Mis Proyectos
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
+</section>

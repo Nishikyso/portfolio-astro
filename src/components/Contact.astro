@@ -1,0 +1,23 @@
+---
+// src/components/Contact.astro
+import BackgroundShapes from './BackgroundShapes.astro';
+---
+<section id="contact" class="relative py-20 px-4">
+
+  <BackgroundShapes section="contact" />
+
+  <div class="relative container mx-auto max-w-3xl text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-text mb-4">
+      ¿Tenés una idea en mente?
+    </h2>
+    <p class="text-lg mb-8">
+      Me encantaría ayudarte a hacerla realidad. Escribime y empecemos a construir algo increíble juntos.
+    </p>
+    <a 
+      href="mailto:tuemail@ejemplo.com"
+      class="inline-block bg-accent text-white font-bold py-3 px-8 rounded-btn shadow-solid border-2 border-transparent hover:bg-transparent hover:text-accent hover:border-accent transition-all duration-300 hover:shadow-[8px_8px_0px_var(--shadow-color)]"
+    >
+      Hablemos
+    </a>
+  </div>
+</section>

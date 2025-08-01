@@ -1,0 +1,46 @@
+---
+// src/components/Header.astro
+import HeaderControls from './HeaderControls.astro';
+---
+<header id="header-island" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-4xl">
+  <div class="container mx-auto px-4 py-2 flex justify-between items-center bg-header-bg rounded-main shadow-lg border border-white/10">
+    <a href="#" class="font-bold text-xl text-text">
+      <span id="header-title-animation"></span>
+    </a>
+
+    <nav class="hidden md:flex md:items-center gap-4">
+      <a href="#projects" class="text-text/80 hover:text-text transition-colors">Proyectos</a>
+      <a href="#contact" class="text-text/80 hover:text-text transition-colors">Contacto</a>
+      <HeaderControls />
+    </nav>
+
+  </div>
+</header>
+
+{/* 👇 Movemos toda la lógica aquí adentro */}
+<script>
+  import Typed from 'typed.js';
+
+  // La función se ejecutará cuando el DOM esté completamente cargado.
+  document.addEventListener('DOMContentLoaded', () => {
+    // Opciones para la animación de tipeo
+    const options = {
+      // Array de textos que se escribirán
+      strings: [
+        '&lt;RamiroGarcia/&gt;',
+        './Ramiro-portfolio',
+        'RG.',
+        'Ramiro Garcia'
+
+      ],
+      typeSpeed: 120,   // Velocidad de tipeo en milisegundos
+      backSpeed: 70,   // Velocidad de borrado
+      loop: true,      // Repetir la animación indefinidamente
+      smartBackspace: true, // Borra solo lo que es diferente del siguiente string
+      backDelay: 20000, // Pausa de 20 segundos después de terminar de escribir
+    };
+
+    // Crea una nueva instancia de Typed.js
+    const typed = new Typed('#header-title-animation', options);
+  });
+</script>

@@ -1,0 +1,29 @@
+---
+// src/components/Hero.astro
+import BackgroundShapes from './BackgroundShapes.astro';
+---
+<section id="hero" class="relative min-h-screen flex items-center justify-center px-4">
+  
+  <BackgroundShapes section="hero" />
+
+  {/* Contenido principal del Hero */}
+  <div class="text-center max-w-3xl z-10">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-text mb-4">
+      Hola, soy <span class="text-primary">Ramiro Garcia</span>
+    </h1>
+    <p class="text-lg md:text-xl text-text/80 mb-8">
+      Frontend Developer especializado en crear experiencias web memorables y de alto rendimiento.
+    </p>
+    <a href="#projects" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-btn shadow-solid border-2 border-transparent hover:border-primary transition-all duration-300 hover:shadow-[8px_8px_0px_var(--shadow-color)]">
+      Ver mis Proyectos
+    </a>
+  </div>
+
+  {/* Indicador de scroll */}
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float z-10">
+    <span class="text-sm font-body tracking-widest uppercase text-text/50">Scroll</span>
+    <svg class="w-4 h-4 text-text/50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+    </svg>
+  </div>
+</section>

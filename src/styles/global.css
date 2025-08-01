@@ -1,0 +1,191 @@
+/* src/styles/global.css */
+@import 'tailwindcss';
+@config "../../tailwind.config.mjs";
+
+
+button, a {
+  cursor: pointer;
+}
+
+/* Ocultar la barra de scroll en navegadores WebKit (Chrome, Safari, etc.) */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ocultar la barra de scroll en Firefox */
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+
+/* Tema por defecto: Cuadrado (Claro) */
+:root {
+  /* Tipografía */
+  --font-heading: 'Roboto Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* Paleta de colores */
+  --bg-color: #F5F5F5;
+  --text-color: #111827;
+  --primary-color: #8B5CF6; 
+  --accent-color: #10B981; 
+  
+  /* Geometría */
+  --border-radius-main: 0px;
+  --border-radius-btn: 0px;
+  --border-radius-header: 0px;
+
+  /* Sombra */
+  --shadow-color: transparent;
+  --shadow-offset: 0px;
+}
+
+/* Aplicamos las fuentes base a los elementos */
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+
+/* Modo Oscuro General */
+[data-mode='dark'] {
+  --bg-color: #111827;
+  --text-color: #F5F5F5;
+}
+
+/* --- Tema Neobrutalista --- */
+[data-theme='neobrutalist'] {
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --bg-color: #f4f1ea; /* Color hueso/crema para el fondo */
+  --text-color: #1e1e1e; /* Negro apenas suave */
+  --primary-color: #e63946; /* Rojo fuerte */
+  --accent-color: #457b9d; /* Azul apagado */
+  --shadow-offset: 4px;
+  --shadow-color: #1e1e1e;
+}
+[data-theme='neobrutalist'][data-mode='dark'] {
+  --bg-color: #1e1e1e; /* Fondo oscuro */
+  --text-color: #f4f1ea; /* Texto color hueso */
+  --primary-color: #e63946; /* El rojo resalta bien en oscuro */
+  --accent-color: #489fb5; /* Un celeste claro para el acento */
+  --shadow-color: #000000;
+}
+
+/* --- Tema Liquid Glass --- */
+[data-theme='liquid-glass'] {
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --bg-color: #f0faff; /* Un blanco azulado muy claro */
+  --text-color: #0c4a6e;
+  --primary-color: #0ea5e9; 
+  --border-radius-main: 1.5rem; /* cards */
+  --border-radius-btn: 9999px;  /* botones */
+  --border-radius-header: 9999px; /* header */
+}
+[data-theme='liquid-glass'][data-mode='dark'] {
+  --bg-color: #081c2b; /* Fondo azul noche */
+  --text-color: #e0f2fe; /* Texto celeste claro */
+  --primary-color: #38bdf8; /* Celeste más brillante */
+}
+
+/* ESTILOS DE COMPONENTES ESPECÍFICOS */
+/* FIGURAS DE FONDO */
+/* El contenedor principal es fijo y se queda detrás de todo */
+#background-shapes-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Por defecto, todos los grupos de figuras están ocultos */
+.shapes-square,
+.shapes-neobrutalist,
+.shapes-glass {
+  display: none;
+}
+
+/* Mostramos el grupo de figuras que corresponde al tema activo */
+[data-theme='square'] .shapes-square { display: block; }
+[data-theme='neobrutalist'] .shapes-neobrutalist { display: block; }
+[data-theme='liquid-glass'] .shapes-glass { display: block; }
+
+
+/* HEADER */
+/* Header Neobrutalista */
+[data-theme='neobrutalist'] #header-island > div {
+  background-color: var(--accent-color); /* Fondo azul apagado */
+  border: 2px solid var(--text-color); /* Borde sólido */
+}
+[data-theme='neobrutalist'] #header-island a,
+[data-theme='neobrutalist'] #header-island span,
+[data-theme='neobrutalist'] #header-island select,
+[data-theme='neobrutalist'] #header-island button {
+    color: var(--bg-color); /* Texto contrastante */
+    font-weight: 600;
+}
+
+/* Header Cuadrado (Claro) */
+[data-theme='square'][data-mode='light'] #header-island > div {
+  background-color: #18181b; /* Reemplaza #1F2937 por un gris más neutro */
+}
+[data-theme='square'][data-mode='light'] #header-island a,
+[data-theme='square'][data-mode='light'] #header-island span,
+[data-theme='square'][data-mode='light'] #header-island select,
+[data-theme='square'][data-mode='light'] #header-island button {
+    color: white;
+}
+
+/* Header Cuadrado (Oscuro) */
+[data-theme='square'][data-mode='dark'] #header-island > div {
+  background-color: rgb(17, 55, 56); /* Reemplaza #000000 para que no sea tan oscuro */
+}
+
+/* Header Liquid Glass (Claro) */
+[data-theme='liquid-glass'][data-mode='light'] #header-island > div {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Header Liquid Glass (Oscuro) */
+[data-theme='liquid-glass'][data-mode='dark'] #header-island > div {
+  background: rgba(12, 28, 43, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* CARDS */
+/* Cards Square y Neo con bg */
+[data-theme='square'] .project-card,
+[data-theme='neobrutalist'] .project-card {
+  background-color: var(--bg-color);
+}
+
+/* Cards Liquid Glass */
+[data-theme='liquid-glass'] .project-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+/* Cards Liquid Glass (Oscuro) */
+[data-theme='liquid-glass'][data-mode='dark'] .project-card {
+  background-color: rgba(12, 28, 43, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Cards  Neobrutalista */
+[data-theme='neobrutalist'] .project-card {
+  box-shadow: 8px 8px 0 var(--shadow-color);
+}
+[data-theme='neobrutalist'] .project-card:hover {
+  box-shadow: 12px 14px 0 var(--shadow-color);
+}
