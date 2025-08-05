@@ -9,15 +9,14 @@ import HeaderControls from './HeaderControls.astro';
     </a>
 
     <nav class="hidden md:flex md:items-center gap-4">
-      <a href="#projects" class="text-text/80 hover:text-text transition-colors">Proyectos</a>
-      <a href="#contact" class="text-text/80 hover:text-text transition-colors">Contacto</a>
+      <a href="#projects" class="text-text/80 hover:text-primary transition-colors">Proyectos</a>
+      <a href="#contact" class="text-text/80 hover:text-primary transition-colors">Contacto</a>
       <HeaderControls />
     </nav>
 
   </div>
 </header>
 
-{/* 👇 Movemos toda la lógica aquí adentro */}
 <script>
   import Typed from 'typed.js';
 
@@ -33,11 +32,11 @@ import HeaderControls from './HeaderControls.astro';
         'Ramiro Garcia'
 
       ],
-      typeSpeed: 120,   // Velocidad de tipeo en milisegundos
+      typeSpeed: 120,   // Velocidad de tipeo en ms
       backSpeed: 70,   // Velocidad de borrado
-      loop: true,      // Repetir la animación indefinidamente
+      loop: true,
       smartBackspace: true, // Borra solo lo que es diferente del siguiente string
-      backDelay: 20000, // Pausa de 20 segundos después de terminar de escribir
+      backDelay: 20000, // Pausa de 20s después de escribir
     };
 
     // Crea una nueva instancia de Typed.js
