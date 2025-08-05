@@ -18,9 +18,37 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Aplicamos las fuentes base a los elementos */
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
 
-/* Tema por defecto: Cuadrado (Claro) */
+/* --- Tema Neobrutalista (tema principal) --- */
 :root {
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --bg-color: #f4f1ea; /* Color hueso/crema para el fondo */
+  --text-color: #1e1e1e; /* Negro apenas suave */
+  --primary-color: #e63946; /* Rojo fuerte */
+  --accent-color: #457b9d; /* Azul apagado */
+  --shadow-offset: 4px;
+  --shadow-color: #1e1e1e;
+}
+[data-theme='neobrutalist'][data-mode='dark'] {
+  --bg-color: #1e1e1e; /* Fondo oscuro */
+  --text-color: #f4f1ea; /* Texto color hueso */
+  --primary-color: #e63946; /* El rojo resalta bien en oscuro */
+  --accent-color: #489fb5; /* Un celeste claro para el acento */
+  --shadow-color: #000000;
+}
+
+/* --- Tema Square --- */
+[data-theme='square'] {
   /* Tipografía */
   --font-heading: 'Roboto Mono', monospace;
   --font-body: 'Inter', sans-serif;
@@ -40,41 +68,9 @@ html {
   --shadow-color: transparent;
   --shadow-offset: 0px;
 }
-
-/* Aplicamos las fuentes base a los elementos */
-body {
-  font-family: var(--font-body);
-  overflow-x: hidden;
-  background-color: var(--bg-color);
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-}
-
-
-/* Modo Oscuro General */
-[data-mode='dark'] {
+[data-theme='square'][data-mode='dark'] {
   --bg-color: #111827;
   --text-color: #F5F5F5;
-}
-
-/* --- Tema Neobrutalista --- */
-[data-theme='neobrutalist'] {
-  --font-heading: 'Archivo Black', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --bg-color: #f4f1ea; /* Color hueso/crema para el fondo */
-  --text-color: #1e1e1e; /* Negro apenas suave */
-  --primary-color: #e63946; /* Rojo fuerte */
-  --accent-color: #457b9d; /* Azul apagado */
-  --shadow-offset: 4px;
-  --shadow-color: #1e1e1e;
-}
-[data-theme='neobrutalist'][data-mode='dark'] {
-  --bg-color: #1e1e1e; /* Fondo oscuro */
-  --text-color: #f4f1ea; /* Texto color hueso */
-  --primary-color: #e63946; /* El rojo resalta bien en oscuro */
-  --accent-color: #489fb5; /* Un celeste claro para el acento */
-  --shadow-color: #000000;
 }
 
 /* --- Tema Liquid Glass --- */
@@ -87,6 +83,9 @@ h1, h2, h3, h4, h5, h6 {
   --border-radius-main: 1.5rem; /* cards */
   --border-radius-btn: 9999px;  /* botones */
   --border-radius-header: 9999px; /* header */
+   /* Sombra */
+  --shadow-color: transparent;
+  --shadow-offset: 0px;
 }
 [data-theme='liquid-glass'][data-mode='dark'] {
   --bg-color: #081c2b; /* Fondo azul noche */
@@ -129,6 +128,9 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--bg-color); /* Texto contrastante */
     font-weight: 600;
 }
+[data-theme='neobrutalist'][data-mode='dark'] #header-island a:hover {
+  color: var(--primary-color);
+}
 
 /* Header Cuadrado (Claro) */
 [data-theme='square'][data-mode='light'] #header-island > div {
@@ -140,15 +142,18 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme='square'][data-mode='light'] #header-island button {
     color: white;
 }
+[data-theme='square'] #header-island a:hover {
+  color: var(--primary-color);
+}
 
 /* Header Cuadrado (Oscuro) */
 [data-theme='square'][data-mode='dark'] #header-island > div {
-  background-color: rgb(17, 55, 56); /* Reemplaza #000000 para que no sea tan oscuro */
+  background-color: rgb(17, 55, 56);
 }
 
 /* Header Liquid Glass (Claro) */
 [data-theme='liquid-glass'][data-mode='light'] #header-island > div {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.7);

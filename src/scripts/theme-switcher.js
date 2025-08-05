@@ -1,7 +1,7 @@
 (() => {
   const THEME_KEY = 'theme';
   const MODE_KEY = 'mode';
-  const DEFAULT_THEME = 'square';
+  const DEFAULT_THEME = 'neobrutalist';
   const DEFAULT_MODE = 'light';
 
   function applyTheme(theme, mode) {

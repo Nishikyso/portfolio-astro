@@ -3,7 +3,7 @@
 import BackgroundShapes from './BackgroundShapes.astro';
 ---
 <section id="hero" class="relative min-h-screen flex items-center justify-center px-4">
-  
+
   <BackgroundShapes section="hero" />
 
   {/* Contenido principal del Hero */}
@@ -20,10 +20,10 @@ import BackgroundShapes from './BackgroundShapes.astro';
   </div>
 
   {/* Indicador de scroll */}
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float z-10">
+  <a href="#projects" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float z-10">
     <span class="text-sm font-body tracking-widest uppercase text-text/50">Scroll</span>
     <svg class="w-4 h-4 text-text/50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
-  </div>
+  </a>
 </section>

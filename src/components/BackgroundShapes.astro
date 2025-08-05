@@ -10,17 +10,19 @@ const { section } = Astro.props;
   {/* Renderiza las figuras solo si la sección es "hero" */}
   {section === 'hero' && (
     <>
+      <div class="shapes-neobrutalist">
+        {/* CORREGIDO: Reducido a 3 figuras y formas ajustadas */}
+        <div class="absolute top-[15%] right-[25%] h-20 w-20 border-2 border-primary rotate-12"></div> {/* Cuadrado */}
+        <div class="absolute bottom-[20%] right-[10%] h-28 w-28 bg-accent/50 rounded-full"></div> {/* Círculo */}
+        <div class="absolute top-[55%] left-[10%] h-16 w-16 bg-primary/50 rounded-xl animate-spin-slow"></div> {/* Cuadrado con bordes redondos */}
+      </div>
+
       <div class="shapes-square">
         <div class="absolute top-[10%] left-[15%] h-24 w-24 bg-primary/20"></div>
         <div class="absolute top-[25%] right-[20%] h-24 w-24 bg-primary/20"></div>
         <div class="absolute bottom-[15%] right-[10%] h-32 w-32 bg-accent/20"></div>
       </div>
-      <div class="shapes-neobrutalist">
-        {/* CORREGIDO: Reducido a 3 figuras y formas ajustadas */}
-        <div class="absolute top-[15%] right-[25%] h-20 w-20 border-2 border-primary rotate-12"></div> {/* Cuadrado */}
-        <div class="absolute bottom-[20%] right-[10%] h-28 w-28 bg-accent/50 rounded-full"></div> {/* Círculo */}
-        <div class="absolute top-[55%] left-[10%] h-16 w-16 bg-primary/50 rounded-2xl"></div> {/* Cuadrado con bordes redondos */}
-      </div>
+      
       <div class="shapes-glass">
         {/* CORREGIDO: Eliminado el segundo círculo superpuesto */}
         <div class="absolute -top-1/4 -left-1/4 h-[50vw] w-[50vw] rounded-full bg-primary/50"></div>
@@ -32,13 +34,15 @@ const { section } = Astro.props;
   {/* Renderiza las figuras solo si la sección es "projects" */}
   {section === 'projects' && (
     <>
+      <div class="shapes-neobrutalist">
+        <div class="absolute bottom-[10%] right-[12%] h-16 w-16 bg-primary/50 -rotate-12 animate-spin-slow"></div>
+        <div class="absolute top-[20%] left-[20%] h-20 w-20 bg-primary/50 rounded-full"></div>
+      </div>
+
       <div class="shapes-square">
         <div class="absolute top-[20%] right-[15%] h-28 w-28 bg-primary/20"></div>
       </div>
-      <div class="shapes-neobrutalist">
-        <div class="absolute bottom-[10%] right-[12%] h-16 w-16 bg-primary/50 -rotate-12"></div>
-        <div class="absolute top-[20%] left-[20%] h-20 w-20 bg-primary/50 rounded-full"></div>
-      </div>
+      
       <div class="shapes-glass">
         <div class="absolute top-[30%] left-[-5%] h-[35vw] w-[35vw] rounded-full bg-accent/50"></div>
       </div>
@@ -48,13 +52,13 @@ const { section } = Astro.props;
   {/* Renderiza las figuras solo si la sección es "contact" */}
   {section === 'contact' && (
     <>
-       <div class="shapes-square">
-        <div class="absolute bottom-[10%] right-[20%] h-24 w-24 bg-primary/10"></div>
-      </div>
       <div class="shapes-neobrutalist">
         {/* CORREGIDO: Posiciones ajustadas para mayor separación */}
         <div class="absolute top-[15%] left-[10%] h-30 w-30 bg-accent/50 rounded-2xl rotate-45"></div>
         <div class="absolute bottom-[20%] right-[15%] h-20 w-20 border-2 border-primary rounded-full"></div>
+      </div>
+       <div class="shapes-square">
+        <div class="absolute bottom-[10%] right-[20%] h-24 w-24 bg-primary/10"></div>
       </div>
       <div class="shapes-glass">
         <div class="absolute top-[10%] right-[5%] h-[20vw] w-[20vw] rounded-full bg-primary/50"></div>
