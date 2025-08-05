@@ -117,7 +117,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* HEADER */
 /* Header Neobrutalista */
-[data-theme='neobrutalist'] #header-island > div {
+[data-theme='neobrutalist'] #header-island > div,
+[data-theme='neobrutalist'] #header-island > #mobile-menu {
   background-color: var(--accent-color); /* Fondo azul apagado */
   border: 2px solid var(--text-color); /* Borde sólido */
 }
